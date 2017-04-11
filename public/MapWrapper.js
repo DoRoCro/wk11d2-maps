@@ -13,8 +13,10 @@ MapWrapper.prototype = {
       position: coords,
       map: this.googleMap
     })
+    console.log(coords.lat)
+    var latlngstring = coords.lat + ' ' + coords.lng
     var infowindow = new google.maps.InfoWindow({
-      content: 'this is an infoWindow marker'
+      content: latlngstring
     })
     infowindow.open(this.googleMap, marker)
   },
@@ -25,7 +27,7 @@ MapWrapper.prototype = {
       console.log(event)
       // position = {lat: event.latLng.lat(), lng: event.latLng.lng() }
       position = event.latLng
-
+      console.log(position)
       this.addMarker(position)
     }.bind(this))
   }
