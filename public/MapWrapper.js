@@ -13,6 +13,10 @@ MapWrapper.prototype = {
       position: coords,
       map: this.googleMap
     })
+    var infowindow = new google.maps.InfoWindow({
+      content: 'this is an infoWindow marker'
+    })
+    infowindow.open(this.googleMap, marker)
   },
 
   addClickEvent: function () {
